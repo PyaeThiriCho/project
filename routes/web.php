@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 
-Route::get('/hi', function () {
-    return 'Hi Laravel';
-});
 
-Route::get('/hello', function () {
-    return view('hello');
-});
+Route::get('/intros',[App\Http\Controllers\IntroController::class, 'show']);
+
+Route::get('/test',[App\Http\Controllers\IntroController::class, 'testfun']);
+
+Route::get('/home',[App\Http\Controllers\TemplateController::class, 'index'])->name('home');
+Route::get('/about',[App\Http\Controllers\TemplateController::class, 'about'])->name('about');
+Route::get('/post',[App\Http\Controllers\TemplateController::class, 'post'])->name('post');
+Route::get('/contact',[App\Http\Controllers\TemplateController::class, 'contact'])->name('contact');
+
+
+
+Route::get('/table',[App\Http\Controllers\BackendTemplateController::class, 'tablefun'])->name('table');
+
+//resource
+Route::resource('categories',CategoryController::class);
+
+
+
 
