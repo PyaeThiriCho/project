@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +35,8 @@ Route::get('/table',[App\Http\Controllers\BackendTemplateController::class, 'tab
 //resource
 Route::resource('categories',CategoryController::class);
 
+//resource for student
+Route::resource('students',StudentController::class);
 
 
 

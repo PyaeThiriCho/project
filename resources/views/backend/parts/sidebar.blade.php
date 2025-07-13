@@ -111,6 +111,13 @@
                     <span>Category</span></a>
             </li>
 
+             <!--Student-->
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('students.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Student </span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
